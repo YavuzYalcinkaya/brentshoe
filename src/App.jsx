@@ -4,6 +4,7 @@ import PopularProducts from "./sections/PopularProducts";
 import SuperQuality from "./sections/SuperQuality";
 import Services from "./sections/Services";
 import SpecialOffer from "./sections/SpecialOffer";
+import CustomerReviews from "./sections/CustomerReviews";
 const App = () => (
   <main className="relative">
     <Navbar />
@@ -21,6 +22,9 @@ const App = () => (
     </section>
     <section className="padding">
       <SpecialOffer />
+    </section>
+    <section className="bg-pale-blue padding">
+      <CustomerReviews />
     </section>
   </main>
 );
