@@ -1,6 +1,7 @@
 import Navbar from "./components/Navbar";
 import Hero from "./sections/Hero";
 import PopularProducts from "./sections/PopularProducts";
+import SuperQuality from "./sections/SuperQuality";
 const App = () => (
   <main className="relative">
     <Navbar />
@@ -9,6 +10,9 @@ const App = () => (
     </section>
     <section className="padding">
       <PopularProducts />
+    </section>
+    <section className="padding">
+      <SuperQuality />
     </section>
   </main>
 );
