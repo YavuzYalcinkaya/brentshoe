@@ -1,24 +1,24 @@
-import { useState } from "react";
-
 import { shoes, statistics } from "../constants";
 import { Button, ShoeCard } from "../components";
-import { bigShoe1 } from "../assets/images";
 import { arrowRight } from "../assets/icons";
+import { useSelector, useDispatch } from "react-redux";
+import { setBigShoeImg } from "../redux/imageSlice";
 
 const Hero = () => {
-  const [bigShoeImg, setBigShoeImg] = useState(bigShoe1);
+  const bigShoeImg = useSelector((state) => state.images.bigShoeImg);
+  const dispatch = useDispatch();
 
   return (
     <section
       id="home"
       className="w-full flex xl:flex-row flex-col justify-center min-h-screen gap-10 max-container"
     >
-      <div className="relative xl:w-2/5 flex flex-col justify-center items-start w-full  max-xl:padding-x pt-28">
-        <p className="text-xl font-montserrat text-indigo-600">
+      <div className="relative xl:w-2/5 flex flex-col justify-center items-center xl:items-start w-full  max-xl:padding-x pt-28">
+        <p className="text-xl font-montserrat text-indigo-600 lg:pt-16">
           Our Summer Collections
         </p>
 
-        <h1 className="mt-10 font-palanquin text-8xl max-sm:text-[72px] max-sm:leading-[82px] font-bold">
+        <h1 className="mt-10  font-palanquin xl:text-8xl lg:text-4xl max-sm:text-[72px] max-sm:leading-[82px] font-bold">
           <span className="xl:bg-white xl:whitespace-nowrap relative z-10 pr-10">
             The New Arrival
           </span>
@@ -59,7 +59,7 @@ const Hero = () => {
               <ShoeCard
                 index={index}
                 imgURL={image}
-                changeBigShoeImage={(shoe) => setBigShoeImg(shoe)}
+                changeBigShoeImage={(shoe) => dispatch(setBigShoeImg(shoe))}
                 bigShoeImg={bigShoeImg}
               />
             </div>
